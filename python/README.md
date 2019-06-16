@@ -19,7 +19,7 @@ npm install my-crazy-module --save
 Windows: -->
 Get docker-compose
 ```sh
-git clone ~
+git clone git@github.com:cookie777/Dockerfiles.git
 ```
 
 ## Usage example
