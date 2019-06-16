@@ -1,0 +1,49 @@
+version: '3'
+services:
+  #サービス名 なんでもよし
+  app:
+    # japer/ptyhonというimagesを使う
+    image: japer/python:latest
+
+    # ローカルファイル.にあるdockerfileからビルドしたものを使う。imageの代わり
+    # build: .
+
+    # コンテナ名
+    container_name: debug_python
+
+    # ポート指定
+    # ports:
+    #  - "8888:8888"
+
+    # マウント設定 hostアドレス:コンテナアドレス
+    volumes:
+     - ".:/home"
+
+    # 作業ディレクトリを指定
+    working_dir: /home
+
+
+# ・upで一括起動→各コンテナにexec /bin/bash/で入る
+# ・runで特定のサービスにいきなり入る
+# と２通りがある
+
+# docker-compose.ymlからビルドする
+# docker-compose build
+
+# composseの起動＝全サービス、コンテナ起動
+# docker-compose up -d
+
+# stop docker-compose && remove contaner
+# docker-compose down
+
+# ymlに書かれてる特定のサービスを起動する、コンテナ名は変？
+# docker-compose run "services"
+
+# # コンテナの確認
+# docker-compose ls
+
+# # コンテナの終了
+# docker-compose kill
+
+# #コンテナの削除
+# docker-compose rm
