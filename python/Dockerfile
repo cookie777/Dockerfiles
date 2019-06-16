@@ -12,7 +12,7 @@ FROM ubuntu:latest
 RUN apt-get update -y  \
     && apt-get install -y --no-install-recommends \
         python3 \
-        python-pip \
+        python3-pip \
         wget \
         curl \
 # apt-get clean キャッシュ・ファイルを削除する
@@ -20,7 +20,8 @@ RUN apt-get update -y  \
     && rm -rf /var/lib/apt/lists/*
 
 # よく使うpythonのライブラリインストール
-RUN pip install \
+RUN pip3 install \
+    setuptools \
     flask \
     requests
     # jsonschema
