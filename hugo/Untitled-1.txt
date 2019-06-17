@@ -1,0 +1,46 @@
+
+hugo new site <name>
+\hugo\<name>
+にサイトの雛形
+
+テーマ
+\hugo\<name>\themes\ 
+でgit clone
+
+\hugo\<name>
+で
+hugo server -t athena --bind=0.0.0.0 #--bind=0.0.0.0で別のホストからもアクセスok
+http://localhost:1313 
+
+\hugo\<naem>\public
+に出力
+
+wget
+sudo
+git
+
+docker run --rm --name hugo -v %cd%:/home/ -it -p 1313:1313 hugo-test /bin/bash
+wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.deb
+sudo apt install ./hugo_0.55.6_Linux-64bit.deb
+rm ./hugo_0.55.6_Linux-64bit.deb
+
+
+
+docker run --rm --name hugo -v %cd%:/home/ --workdir="/home" -it -p 1313:1313 hugo-test  hugo new site mysite
+
+cd mysite
+
+mysite上で
+git submodule add https://github.com/mtn/athena-hugo-theme.git themes/Athena
+git submodule add https://github.com/nanxiaobei/hugo-paper.git themes/hugo-paper
+
+config.toml
+でtheme = "<theme name>"ついか
+
+docker run --rm --name hugo -v %cd%:/home/ --workdir="/home/mysite" -it -p 1313:1313 hugo-test  hugo new posts/aaa.md
+draft: false
+
+docker run --rm --name hugo -v %cd%:/home/ --workdir="/home" -it -p 1313:1313 hugo-test  hugo new posts/03.md
+
+docker run --rm --name hugo -v %cd%:/home/ --workdir="/home/" -it -p 1313:1313 hugo-test  hugo
+docker run --rm --name hugo -v %cd%:/home/ --workdir="/home/" -it -p 1313:1313 hugo-test hugo server  --bind=0.0.0.0
