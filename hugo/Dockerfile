@@ -6,7 +6,7 @@ RUN apt update -y  \
         wget \
         git \
 # apt-get clean キャッシュ・ファイルを削除する
-    && apt-get clean \
+    && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
 # apt-get install hugo とたいけど何故かverが古いので
