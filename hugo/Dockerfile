@@ -1,8 +1,8 @@
 
 
 FROM ubuntu:latest
-RUN apt-get update -y  \
-    && apt-get install -y --no-install-recommends \
+RUN apt update -y  \
+    && apt install -y --no-install-recommends \
         wget \
         git \
 # apt-get clean キャッシュ・ファイルを削除する
