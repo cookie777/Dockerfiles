@@ -103,16 +103,19 @@ draft: false
 ```
 としないと実際には反映されないので注意。記事の編集もホスト側で編集してもおｋ
 
-## コミット
-Netliftyなのどのホスティングサイトと連携していれば、あとはgithubにコミットすることで自動的にビルドして反映してくれる。
 
 ## 必要のない作業
+Netliftyなのどのホスティングサイトと連携していれば、あとはgithubにコミットすることで自動的にビルドして反映してくれる。なので 以下は必須ではないけど、ローカルでサイトを確認したいときに行う作業
+ * ビルドする(/publicにhtmlとか公開用のファイルが作られる)
+ * サーバーを起動
 
-ローカルでサイトを確認したいときに行う作業
-ビルドする
-/publicにファイルが作られる
-サーバーを起動
+build
+```sh
+docker run --rm --name hugo -v %cd%:/home/ -it -p 1313:1313 japer/hugo hugo
+```
+start server
+```
+docker run --rm --name hugo -v %cd%:/home/ -it -p 1313:1313 japer/hugo hugo server --bind=0.0.0.0
+```
 
-
-docker run --rm --name hugo -v %cd%:/home/ --workdir="/home/" -it -p 1313:1313 japer/hugo hugo
-docker run --rm --name hugo -v %cd%:/home/ --workdir="/home/" -it -p 1313:1313 japer/hugo hugo server  --bind=0.0.0.0
+<!--  --workdir="/home/"  -->
