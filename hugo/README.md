@@ -90,7 +90,7 @@ docker run --rm --name hugo -v %cd%:/home/ -it -p 1313:1313 japer/hugo  hugo new
 ```
  * -v %cd%:/home/
     * 今の作業場所[site-name] `%cd%`、とコンテナ側のhomeフォルダをリンク
-    * コンテナ側は直接home下に設定ファイルがいろいろ作成されるけど、フォルダの↕関係はあってるので問題ない
+    * コンテナ側は直接home下に設定ファイルがいろいろ作成されるけど、フォルダの上下関係はあってるので問題ない
 * hugo new posts/filename.md
     * hugo new posts/[filename]で名前をつけて新規記事の作成
     * content/posts/以下に記事のファイルが作られる
